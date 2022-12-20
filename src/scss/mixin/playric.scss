@@ -1,0 +1,13 @@
+@import './display.scss';
+@import '../variable/color.scss';
+@mixin playric($size:10px){
+@include displayFlexCenter();
+border-radius: 50%;
+background:transparent;
+border: 0.8px solid $white;
+cursor: pointer;
+&>*{
+    color:$white ;
+    font-size: $size;
+}
+}

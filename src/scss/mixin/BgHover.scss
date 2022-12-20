@@ -1,0 +1,27 @@
+@import '../variable/color.scss';
+@mixin hoverBg($color:white){
+    border-radius: 50%;
+    background-color:$lightGray ;
+    &:hover{
+       background-color: $lightGray;
+    }
+ }
+ @mixin button($bg:$yellow,$color:white){
+   padding: 6px 26px ;
+   text-transform: uppercase;
+   font-weight: bold;
+   border-radius: 10px;
+   border: 0;
+   outline: none;
+   cursor: pointer;
+   color:$color ;
+   background: $bg;
+   &:hover{
+      @if($bg == $yellow){
+         background:darken($bg,10%);
+      }
+      @else{
+         color:darken($color,10%);
+      }
+   }
+ }
