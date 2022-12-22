@@ -1,0 +1,161 @@
+@import '../scss/variable/color.scss';
+@import '../scss/mixin/playric.scss';
+@import '../scss/mixin/BgHover.scss';
+@import '../scss/font.scss';
+@import '../scss/mixin/display.scss';
+@import '../scss/mixin/typo.scss';
+@import '../scss/base.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.sidebar {
+  width: 19%;
+  height: 479px;
+  overflow: hidden;
+  background-color: $darkBgSb;
+  &__header {
+    width: 100%;
+    height: auto;
+    @include padding($top: 16px, $left: 28px, $bottom: 12px);
+    box-sizing: border-box;
+    &--logo {
+      width: 120px;
+      height: 40px;
+    }
+  }
+  &__option {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    color: $white;
+    & > li {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      @include padding($left: 28px,$right:28px);
+      box-sizing: border-box;
+      @include displayFlexCenter($js: flex-start, $gap: 10px);
+      @include title2;
+      cursor: pointer;
+    }
+    & > li:hover {
+      color: darken($white, 10%);
+    }
+    & > li:hover .sidebar__option--playric {
+      visibility: visible;
+    }
+    &--playric {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      @include playric();
+      right: 30px;
+      visibility: hidden;
+    }
+    &--Radio {
+      display: flex;
+    }
+    &--live {
+      padding: 3px 10px;
+      background-color: $red;
+      border-radius: 10px;
+      margin-left: 20px;
+    }
+  }
+  &__hr {
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+  }
+  &__scroll {
+    width: 100%;
+    height: 160px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      visibility: hidden;
+    }
+    &--dangnhap {
+      width: 100%;
+      height: auto;
+      @include padding(13px, 20px, 10px, 20px);
+      box-sizing: border-box;
+    }
+    &--wrap {
+      @include displayFlexCenter;
+      height: 104px;
+      border-radius: 20px;
+      flex-direction: column;
+      gap: 10px;
+      color: white;
+      background-color: $vioBg;
+    }
+    &--wrap2 {
+      @include displayFlexCenter;
+      height: 104px;
+      margin-top: 10px;
+      border-radius: 20px;
+      flex-direction: column;
+      gap: 10px;
+      color: white;
+      background: linear-gradient(117deg, #5a4be7, #c86dd7 102%);
+    }
+    &--des {
+      text-align: center;
+      @include body1($ali: center);
+    }
+    &--btn {
+      @include button($bg: transparent);
+      border: 0.8px solid $white;
+    }
+    &--btn2 {
+      @include button($color: $black);
+    }
+  }
+  &__playric {
+    width: 100%;
+    height: 53px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    @include displayFlexCenter($js: flex-start, $gap: 10px);
+    @include body1;
+    color: $white;
+  }
+}
+.action {
+  width: 100%;
+  height: 40px;
+  background-color: $darkGray;
+  border-left: 3px solid rgb(18, 5, 197);
+}
+.home {
+  width: 81%;
+  height: 479px;
+  background-color: $darkBg;
+}
+.playric {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  background-color: $darkBgPl;
+  @include padding(12px, 20px, 12px, 20px);
+  box-sizing: border-box;
+  height: 90px;
+  &__media {
+    @include displayFlexCenter($js: space-between, $gap: 31px);
+    width: 29%;
+    height: auto;
+    gap: 10px;
+    color: $white;
+    &--content {
+      @include displayFlexCenter($gap: 10px);
+    }
+  }
+  &__icon {
+    @include displayFlexCenter($js: flex-start, $gap: 20px);
+    flex-grow: 1;
+  }
+}
+
